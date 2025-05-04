@@ -1,27 +1,27 @@
 # Geospatial Parameters Demo
 
-## Project Goal
+## 🧭 Project Goal
 
-This project demonstrates a **parameterized and modular geospatial pipeline** that dynamically:
+This project showcases a **parameterized and modular geospatial data pipeline** that allows:
 
-- Loads parameters from YAML files.
-- Generates or loads geospatial data (e.g., GeoJSON).
-- Applies preprocessing steps (e.g., re-projection, cleaning).
-- Performs spatial analysis (e.g., buffer creation).
-- Visualizes outputs interactively using `folium` and Leaflet maps.
+- 📁 Loading settings from YAML configuration files
+- 🌐 Generating or loading geospatial data (GeoJSON)
+- 🧼 Applying preprocessing (CRS transformation, cleaning)
+- 📏 Performing spatial analysis (buffering)
+- 🗺️ Visualizing data using interactive Leaflet maps (via `folium`)
 
-Everything is **fully configurable** through parameter files and designed for easy extension to real-world spatial data automation and monitoring workflows.
+Everything is fully **driven by parameter files** and is organized for clarity, reusability, and extensibility across spatial workflows and automation scenarios.
 
 ---
 
-## Development Environment
+## ⚙️ Development Environment
 
 ### Recommended Tools
 
 - [VS Code](https://code.visualstudio.com/)
 - [Python 3.9+](https://www.python.org/)
 - [JupyterLab](https://jupyter.org/)
-- [GeoPandas & Folium](https://geopandas.org/) for spatial manipulation and visualization
+- [GeoPandas](https://geopandas.org/) and [Folium](https://python-visualization.github.io/folium/) for spatial processing & mapping
 
 ---
 
@@ -59,52 +59,61 @@ geospatial-params-demo/
 
 ├── data/
 
-│   └── sample_points.geojson          # Sample data (auto-generated if missing)
+│   └── sample_points.geojson          # Auto-generated if missing
 
 ├── notebooks/
 
-│   └── preprocessing.ipynb           # Main notebook to run the pipeline
+│   └── pipeline.ipynb                 # Main execution notebook
 
 ├── params/
 
-│   ├── config.yml                    # Path and CRS definitions
+│   ├── config.yml                     # Path to data, CRS, etc.
 
-│   └── preprocessing.yml            # Preprocessing configuration
+│   └── preprocessing.yml             # Rules for preprocessing
 
 ├── src/
 
 │   ├── __init__.py
 
-│   ├── data_generator.py            # Sample data generation logic
+│   ├── data_generator.py             # Generate test points
 
-│   ├── io_utils.py                  # Load functions
+│   ├── io_utils.py                   # Load functions
 
-│   ├── preprocessing.py             # Clean/transform GeoDataFrames
+│   ├── preprocessing.py              # Cleaning/preprocessing
 
-│   ├── spatial_analysis.py          # Buffering and spatial logic
+│   ├── spatial_analysis.py           # Buffering, etc.
 
-│   └── visualize.py                 # Leaflet/Folium visualization
+│   └── visualize.py                  # Leaflet map plotting
 
-├── requirements.txt
+├── .gitignore                        # Excludes .venv, cache, etc.
 
-└── README.md
+├── requirements.txt                  # Python dependencies
+
+└── README.md                         # This file
 
 
-### How to Run the Project
+### How to Run the Pipeline
 
-From Jupyter Notebook:
+1. Open notebooks/pipeline.ipynb:
 
-1. Open notebooks/preprocessing.ipynb
-2. Ensure correct kernel (.venv) is selected
-3. Run the cells in order
+2. Select the proper kernel: Python (.venv) - Geospatial
+3. Run all cells from top to bottom
 
+It will:
+
+1. Load parameters
+2. Generate or read GeoJSON
+3. Reproject and clean the data
+4. Create buffer zones
+5. Display an interactive Leaflet map
 
 ### Testing & Extending
 
-All functions are modular and reusable.
-Replace sample_points.geojson with your own dataset.
-Modify params/config.yml and params/preprocessing.yml to test different scenarios.
+You can:
 
+* Replace data/sample_points.geojson with your own .geojson
+* Modify the YAMLs in params/ to alter logic and behavior
+* Extend src/ modules (e.g., more preprocessing rules, more complex spatial joins)
 
 ### Known Warnings and Fixes
 
@@ -116,9 +125,10 @@ Avoid using .centroid directly on EPSG:4326; project first!
 
 ### To-Do / Next Steps
 
-Add unit tests (pytest, unittest)
-Add polygon/line handling
-Export output maps and KPIs
+* Add unit tests (pytest, unittest)
+* Add polygon/line handling
+* Export output maps and KPIs
+* Deploy the results through streamlit or shiny dashboards.
 
 
 **Developed by Canalytics — Data & AI Engineering Solutions for Spatial Analytics.**
