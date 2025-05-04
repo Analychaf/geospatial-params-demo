@@ -1,0 +1,3 @@
+drop_na: true
+columns_to_keep: ["id", "geometry"]
+simplify_tolerance: 0.0001

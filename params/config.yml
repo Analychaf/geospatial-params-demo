@@ -1,0 +1,3 @@
+input_file: "../data/sample_points.geojson"
+buffer_radius: 0.005
+crs: "EPSG:4326"
