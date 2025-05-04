@@ -56,21 +56,37 @@ Python (.venv) - Geospatial
 ### Project Structure
 
 geospatial-params-demo/
+
 ├── data/
+
 │   └── sample_points.geojson          # Sample data (auto-generated if missing)
+
 ├── notebooks/
+
 │   └── preprocessing.ipynb           # Main notebook to run the pipeline
+
 ├── params/
+
 │   ├── config.yml                    # Path and CRS definitions
+
 │   └── preprocessing.yml            # Preprocessing configuration
+
 ├── src/
+
 │   ├── __init__.py
+
 │   ├── data_generator.py            # Sample data generation logic
+
 │   ├── io_utils.py                  # Load functions
+
 │   ├── preprocessing.py             # Clean/transform GeoDataFrames
+
 │   ├── spatial_analysis.py          # Buffering and spatial logic
+
 │   └── visualize.py                 # Leaflet/Folium visualization
+
 ├── requirements.txt
+
 └── README.md
 
 
